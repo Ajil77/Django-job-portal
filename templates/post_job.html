@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Job | Employer Dashboard</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/post_job.css' %}">
+
+</head>
+<body>
+  <div class="container py-4 py-md-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="job-form-card">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 fw-bold text-gray-900">Post a New Job</h1>
+            <a href="{% url 'employer_home' %}" class="btn btn-sm btn-outline-secondary">
+              <i class="fas fa-arrow-left me-1"></i> Back
+            </a>
+          </div>
+
+          <form method="POST">
+            {% csrf_token %}
+
+            <!-- Title -->
+            <div class="mb-4">
+              <label class="form-label">Title</label>
+              <input type="text" name="title" class="form-control" placeholder="e.g., Software Engineer">
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+              <label class="form-label">Description</label>
+              <textarea name="description" class="form-control" rows="5" placeholder="Describe the role, responsibilities, and requirements..."></textarea>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-4">
+              <label class="form-label">Location</label>
+              <input type="text" name="location" class="form-control" placeholder="e.g., New York, NY or Remote">
+            </div>
+
+            <!-- Salary -->
+            <div class="mb-4">
+              <label class="form-label">Salary</label>
+              <input type="number" step="0.01" name="salary" class="form-control" placeholder="e.g., 75000.00">
+              <div class="form-text text-muted">
+                Enter as a number (e.g., 75000 or 75000.50). Optional.
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-post btn-lg">
+                <i class="fas fa-bullhorn me-2"></i> Post Job
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

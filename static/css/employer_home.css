@@ -1,0 +1,79 @@
+body {
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.header-section {
+  margin-bottom: 2.5rem;
+}
+
+.company-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.job-list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.2s ease;
+}
+
+.job-list-item:hover {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.empty-state {
+  color: #64748b;
+}
+
+.action-btn {
+  min-width: 140px;
+}
+/* Navbar */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin-right: 0.75rem;
+}
+
+.navbar-nav .btn {
+  padding: 0.35rem 1rem;
+}
+
+/* Footer */
+footer {
+  background: #f8fafc;
+}
+
+footer a {
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #2563eb;
+}
+

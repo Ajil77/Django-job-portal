@@ -1,0 +1,42 @@
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .profile-form-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    .form-control, .form-control:focus {
+      border: 1px solid #cbd5e1;
+      box-shadow: none;
+    }
+    .form-control:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      border-color: #2563eb;
+    }
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    .current-logo-preview {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      margin-top: 0.5rem;
+    }
+    .logo-section {
+      margin-bottom: 1.5rem;
+    }

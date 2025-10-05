@@ -1,0 +1,24 @@
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .job-form-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    .btn-post {
+      background-color: #10b981;
+      border-color: #10b981;
+      font-weight: 600;
+    }
+    .btn-post:hover {
+      background-color: #0da271;
+      border-color: #0da271;
+    }
