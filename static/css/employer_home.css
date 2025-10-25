@@ -1,79 +1,80 @@
+/* Global */
 body {
-  background-color: #f8fafc;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+a, button {
+  transition: all 0.3s ease;
 }
 
-.dashboard-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.header-section {
-  margin-bottom: 2.5rem;
-}
-
-.company-badge {
-  background: #e0f2fe;
-  color: #0369a1;
-  font-weight: 600;
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  font-size: 1rem;
-}
-
-.job-list-item {
-  padding: 1rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  transition: background 0.2s ease;
-}
-
-.job-list-item:hover {
-  background: #f1f5f9;
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-.empty-state {
-  color: #64748b;
-}
-
-.action-btn {
-  min-width: 140px;
-}
 /* Navbar */
 .navbar-brand {
-  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
-
 .navbar-nav .nav-link {
   font-weight: 500;
-  margin-right: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0d6efd;
 }
 
-.navbar-nav .btn {
-  padding: 0.35rem 1rem;
+/* Header */
+header h1 {
+  font-size: 1.8rem;
+}
+header .badge {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Quick Action Cards */
+.action-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+}
+
+/* Job List */
+.job-item {
+  transition: background-color 0.2s ease;
+  border: 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.job-item:hover {
+  background-color: #f9fafc;
+}
+.job-item h5 {
+  font-size: 1.05rem;
 }
 
 /* Footer */
-footer {
-  background: #f8fafc;
+.social-link:hover {
+  color: #0d6efd !important;
+}
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-footer a {
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
+/* Responsive */
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
 }
-
-footer a:hover {
-  color: #2563eb;
-}
-

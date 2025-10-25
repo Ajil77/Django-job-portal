@@ -45,7 +45,7 @@ def login_view(request):
         try:
             user = User.objects.get(email=email)
 
-            # ✅ Check hashed password
+    
             if check_password(password, user.password):
                 # Save session
                 request.session['user_id'] = user.id
