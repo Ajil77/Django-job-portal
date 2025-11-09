@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import messages
+from .decorators import role_required #for role based
 from django.contrib.auth.hashers import make_password, check_password
 from .models import User, JobSeekerProfile , EmployerProfile, Job, Application
 
@@ -79,7 +80,7 @@ def logout_view(request):
     return redirect("login")
 
 
-
+@role_required('jobseeker')
 def jobseeker_home(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -96,7 +97,7 @@ def jobseeker_home(request):
     }
     return render(request, 'jobseeker_home.html', context)
 
-
+@role_required('jobseeker')
 def jobseeker_profile(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -119,7 +120,7 @@ def jobseeker_profile(request):
     context = {'user': user, 'profile': profile}
     return render(request, 'jobseeker_profile.html', context)
 
-
+@role_required('employer')
 def employer_home(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -134,7 +135,7 @@ def employer_home(request):
 
 
 
-
+@role_required('admin')
 
 def admin_home(request):
     user_id = request.session.get('user_id')
@@ -167,7 +168,7 @@ def admin_home(request):
     return render(request, 'admin_home.html', context)
 
 
-
+@role_required('employer')
 def post_job(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -192,7 +193,7 @@ def post_job(request):
 
     return render(request, 'post_job.html')
 
-
+@role_required('jobseeker')
 def apply_job(request, job_id):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -210,7 +211,7 @@ def apply_job(request, job_id):
 
     return redirect('jobseeker_home')
 
-
+@role_required('employer')
 def employer_profile(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -246,7 +247,7 @@ def search_jobs(request):
     context = {'jobs': jobs, 'query': query}
     return render(request, 'job_search.html', context)
 
-
+@role_required('jobseeker')
 def jobseeker_view_profile(request):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -260,6 +261,9 @@ def jobseeker_view_profile(request):
         'profile': profile
     }
     return render(request, 'jobseeker_view_profile.html', context)
+
+
+@role_required('employer')
 def view_applicants(request, job_id):
     user_id = request.session.get('user_id')
     if not user_id:
@@ -281,7 +285,7 @@ def view_applicants(request, job_id):
     return render(request, 'view_applicants.html', context)
 
 
-
+@role_required('employer')
 def delete_job(request, job_id):
     user_id = request.session.get('user_id')
     if not user_id:
